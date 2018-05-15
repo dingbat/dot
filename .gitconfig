@@ -1,0 +1,23 @@
+[user]
+    name = Dan Hassin
+    email = danhassin@mac.com
+[core]
+    excludesfile = /Users/dan/.gitignore
+    ignorecase = false
+    editor = vim
+[alias]
+    unstage = reset HEAD --
+    co = checkout
+    br = branch
+    st = status
+    mg = merge
+    cp = cherry-pick
+    brc = checkout -b
+    cdiff = !sh -c 'git diff HEAD~"$0"...HEAD'
+    al = !sh -c 'git config --global alias."$0" "\"$1\""'
+    tagcommit = !sh -c 'git rev-list $0 | head -n 1'
+    undo = !sh -c 'echo \"\\033[31m$(git log -1 --pretty=%B) \\033[0m\" && read -p \"Press enter to confirm undo of this commit\n\" && git reset HEAD~1 && git status'
+[credential]
+    helper = osxkeychain
+[push]
+    default = simple
