@@ -99,3 +99,4 @@ set -g fish_user_paths "/usr/local/opt/node@8/bin" $fish_user_paths
 
 # rbenv
 status --is-interactive; and source (rbenv init -|psub)
+set -g fish_user_paths "/usr/local/opt/qt@5.5/bin" $fish_user_paths
