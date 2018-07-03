@@ -64,6 +64,8 @@ set statusline+=%{noscrollbar#statusline(9,'–','▓',['▐'],['▌'])}
 set statusline+=%#CursorColumn#
 set statusline+=%3p%%
 
+set mouse=a
+
 " ALE
 let g:ale_linters = {
  \ 'javascript': ['eslint'],
@@ -140,7 +142,7 @@ nnoremap tf :TestFile<CR>
 nnoremap ta :TestSuite<CR>
 nnoremap tl :TestLast<CR>
 nnoremap tg :TestVisit<CR>
-let test#ruby#cucumber#executable = 'zeus spinach'
+let test#ruby#cucumber#executable = 'zeus spinach -b'
 let test#javascript#jest#executable = 'yarn test'
 let test#javascript#mocha#executable = 'yarn test'
 " make test commands execute using quickfix window
