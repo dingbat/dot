@@ -4,9 +4,10 @@
 # often fail (at least on my machine) with error "Terminated 15", and a status
 # code of 143. Retrying would eventually get it to run, but it would sometimes
 # take like 6 retries on every test which got incredibly annoying.
+# More info here: https://github.com/burke/zeus/issues/598
 
 # This wrapper (having it in a directory that's somewhere in your PATH with
-# precedence over any RVM stuff) will automatically keep retrying Zeus until
+# precedence over any rbenv stuff) will automatically keep retrying Zeus until
 # this error goes away. Fun times.
 
 rbenv exec zeus "$@"
