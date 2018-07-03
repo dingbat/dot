@@ -5,4 +5,5 @@ function kill_zeus
   else
     printf "Already dead  💀 \n"
   end
+  rm .zeus.sock
 end
