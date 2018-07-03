@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+rbenv exec zeus "$@"
+while [ "$?" = "143" ]
+do
+  rbenv exec zeus "$@"
+done
