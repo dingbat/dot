@@ -4,7 +4,7 @@ set background=dark
 " begin vim-plug
 call plug#begin("~/.vim/plugged")
 
-Plug 'janko-m/vim-test'
+Plug 'dingbat/vim-test'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rails'
 
@@ -142,7 +142,7 @@ nnoremap tf :TestFile<CR>
 nnoremap ta :TestSuite<CR>
 nnoremap tl :TestLast<CR>
 nnoremap tg :TestVisit<CR>
-let test#ruby#cucumber#executable = 'zeus spinach -b'
+let test#ruby#gherkin#framework = 'spinach'
 let test#javascript#jest#executable = 'yarn test'
 let test#javascript#mocha#executable = 'yarn test'
 " make test commands execute using quickfix window
