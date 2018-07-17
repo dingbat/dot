@@ -9,6 +9,8 @@
     unstage = reset HEAD --
     co = checkout
     br = branch
+    rb = rebase
+    rbm = rebase master
     st = status
     mg = merge
     cp = cherry-pick
