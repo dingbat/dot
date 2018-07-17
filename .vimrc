@@ -155,9 +155,6 @@ nnoremap tbf :!yarn features %<CR>
 " test mobile cucumber
 nnoremap tm :!yarn cucumber %\:<C-r>=line('.')<CR><CR>
 nnoremap tmf :!yarn cucumber %<CR>
-" test web spinach
-nnoremap tw :!bundle exec spinach %\:<C-r>=line('.')<CR><CR>
-nnoremap twf :!bundle exec spinach %<CR>
 
 " vim-jsx
 let g:jsx_ext_required = 0
