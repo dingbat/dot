@@ -1,5 +1,5 @@
 set background=dark
-"set background=light
+" set background=light
 
 " begin vim-plug
 call plug#begin("~/.vim/plugged")
@@ -185,6 +185,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Remap Y to be more consistent with D and C (copy till end of line)
+nnoremap Y y$
 
 " More natural split opening
 set splitbelow
