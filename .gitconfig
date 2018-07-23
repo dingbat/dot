@@ -19,6 +19,7 @@
     al = !sh -c 'git config --global alias."$0" "\"$1\""'
     tagcommit = !sh -c 'git rev-list $0 | head -n 1'
     undo = !sh -c 'echo \"\\033[31m$(git log -1 --pretty=%B) \\033[0m\" && read -p \"Press enter to confirm undo of this commit\n\" && git reset HEAD~1 && git status'
+    fix = "!vim -p `git diff --name-only | uniq`"
 [credential]
     helper = osxkeychain
 [push]
