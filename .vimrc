@@ -4,6 +4,7 @@ set background=dark
 " begin vim-plug
 call plug#begin("~/.vim/plugged")
 
+Plug 'prettier/vim-prettier'
 Plug 'dingbat/vim-test'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rails'
@@ -34,6 +35,10 @@ Plug 'chrisbra/csv.vim'
 
 call plug#end()
 " end vim-plug
+
+" prettier
+let g:prettier#config#prose_wrap = 'always'
+autocmd BufWritePre *.md Prettier
 
 " gives us % for ruby code (do/end etc)
 runtime macros/matchit.vim
@@ -142,7 +147,7 @@ nnoremap tf :TestFile<CR>
 nnoremap ta :TestSuite<CR>
 nnoremap tl :TestLast<CR>
 nnoremap tg :TestVisit<CR>
-let test#ruby#gherkin#framework = 'spinach'
+let test#ruby#gherkin#framework = 'spinach -b'
 let test#javascript#jest#executable = 'yarn test'
 let test#javascript#mocha#executable = 'yarn test'
 " make test commands execute using quickfix window
