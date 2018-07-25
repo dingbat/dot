@@ -151,8 +151,9 @@ let test#ruby#gherkin#framework = 'spinach -b'
 let test#javascript#jest#executable = 'yarn test'
 let test#javascript#mocha#executable = 'yarn test'
 " make test commands execute using quickfix window
-" edit; Not using it because it doesn't work with byebug :(
-let test#strategy = "basic"
+let test#strategy = "dispatch"
+" close quickfix window shortcut
+nnoremap qq :ccl<CR>
 
 " test mobile brine
 nnoremap tb "byy:!yarn features -t '<C-r>=substitute(@b, '.*"\(.*\)".*' ,"\\1","")<CR>'<CR>

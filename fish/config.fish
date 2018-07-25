@@ -13,6 +13,7 @@ abbr -a gco "git checkout"
 alias be="bundle exec"
 
 alias v="vim"
+alias vi="vim"
 alias z="zeus"
 alias zc="zeus c"
 
