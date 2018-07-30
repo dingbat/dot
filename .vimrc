@@ -153,7 +153,9 @@ let test#javascript#mocha#executable = 'yarn test'
 " make test commands execute using quickfix window
 let test#strategy = "dispatch"
 " close quickfix window shortcut
-nnoremap qq :ccl<CR>
+nnoremap <C-F> :ccl<CR>
+" open current split into new tab (useful to see QF window full screen too)
+nnoremap ts :tab split<CR>
 
 " test mobile brine
 nnoremap tb "byy:!yarn features -t '<C-r>=substitute(@b, '.*"\(.*\)".*' ,"\\1","")<CR>'<CR>

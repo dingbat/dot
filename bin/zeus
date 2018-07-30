@@ -10,8 +10,16 @@
 # precedence over any rbenv stuff) will automatically keep retrying Zeus until
 # this error goes away. Fun times.
 
-rbenv exec zeus "$@"
-while [ "$?" = "143" ]
+# Also, we may want to set the OBJC_DISABLE_INITIALIZE_FORK_SAFETY env variable
+# because there is sometimes a weird error that you can read about here:
+# https://github.com/burke/zeus/issues/617
+# This hasn't been an issue lately though. If you run into this, use
+# zeus --log ./zeus.log start
+# and try to debug from there
+
+s="143"
+while [ $s = "143" ]
 do
   rbenv exec zeus "$@"
+  s="$?"
 done

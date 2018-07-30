@@ -11,6 +11,7 @@
     br = branch
     rb = rebase
     rbm = rebase master
+    rbc = rebase --continue
     st = status
     mg = merge
     cp = cherry-pick
