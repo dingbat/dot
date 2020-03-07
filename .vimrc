@@ -9,8 +9,10 @@ Plug 'dingbat/vim-test'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rails'
 
-Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 Plug 'dag/vim-fish'
 
 Plug 'scrooloose/nerdtree'
@@ -33,8 +35,47 @@ Plug 'tpope/vim-surround'
 
 Plug 'chrisbra/csv.vim'
 
+Plug 'godlygeek/windowlayout'
+Plug 'vim-scripts/bufmru.vim'
+
+Plug 'terryma/vim-multiple-cursors'
+
 call plug#end()
 " end vim-plug
+
+" multi cursor
+let g:multi_cursor_exit_from_insert_mode = 0
+" let g:multi_cursor_exit_from_visual_mode = 0
+
+" undo close window
+" remove bad default of space to something unused
+let g:bufmru_switchkey = "<c-t>oeijaofij"
+command! Q execute "vsplit" bufname(g:bufmru_bnrs[1])
+
+" undo close tab
+" from https://www.reddit.com/r/vim/comments/3ke941/undo_close_tab/cuxwxy1/
+
+let s:close_tab_history = []
+
+function! s:UndoCloseTab()
+  if len(s:close_tab_history)
+    tabnew
+    call windowlayout#SetLayout(remove(s:close_tab_history, -1))
+  endif
+endfunction
+command! UndoCloseTab call s:UndoCloseTab()
+
+function! s:CloseTab()
+  if tabpagenr('$') != 1
+    call add(s:close_tab_history, windowlayout#GetLayout())
+    tabclose
+  endif
+endfunction
+command! CloseTab call s:CloseTab()
+
+nnoremap Tx :<C-u>CloseTab<CR>
+nnoremap Tu :<C-u>UndoCloseTab<CR>
+
 
 " prettier
 let g:prettier#config#prose_wrap = 'always'
@@ -47,6 +88,9 @@ runtime macros/matchit.vim
 set shell=/bin/bash
 
 " VIM THINGS
+
+" Make control-D to close the window like it does in a shell / tmux
+nnoremap <C-D> :q<CR>
 
 set laststatus=2
 
@@ -139,6 +183,10 @@ set completeopt-=preview
 " vim-easymotion
 map <Space> <Plug>(easymotion-w)
 
+" vim-dispatch
+let g:dispatch_quickfix_height=21
+set errorformat=""
+
 " vim-test
 " write automatically when running tests
 set autowrite
@@ -148,8 +196,8 @@ nnoremap ta :TestSuite<CR>
 nnoremap tl :TestLast<CR>
 nnoremap tg :TestVisit<CR>
 let test#ruby#gherkin#framework = 'spinach -b'
-let test#javascript#jest#executable = 'yarn test'
-let test#javascript#mocha#executable = 'yarn test'
+let test#javascript#jest#executable = 'yarn jest'
+let test#javascript#mocha#executable = 'yarn jest'
 " make test commands execute using quickfix window
 let test#strategy = "dispatch"
 " close quickfix window shortcut
@@ -157,12 +205,13 @@ nnoremap <C-F> :ccl<CR>
 " open current split into new tab (useful to see QF window full screen too)
 nnoremap ts :tab split<CR>
 
-" test mobile brine
-nnoremap tb "byy:!yarn features -t '<C-r>=substitute(@b, '.*"\(.*\)".*' ,"\\1","")<CR>'<CR>
-nnoremap tbf :!yarn features %<CR>
-" test mobile cucumber
-nnoremap tm :!yarn cucumber %\:<C-r>=line('.')<CR><CR>
-nnoremap tmf :!yarn cucumber %<CR>
+" test rspec without plugin
+nnoremap tr :!bundle exec rspec %\:<C-r>=line('.')<CR><CR>
+
+" migrate down
+nnoremap rmd :!bundle exec rake db:migrate:down VERSION='<C-r>=substitute(expand('%:t'),'_.*',"","")<CR>'<CR>
+nnoremap rmr :!bundle exec rake db:migrate:redo VERSION='<C-r>=substitute(expand('%:t'),'_.*',"","")<CR>'<CR>
+nnoremap rm :!bundle exec rake db:migrate<CR>
 
 " vim-jsx
 let g:jsx_ext_required = 0
@@ -209,3 +258,11 @@ set relativenumber
 autocmd BufRead,BufNewFile Fastfile set filetype=ruby
 autocmd BufRead,BufNewFile Matchfile set filetype=ruby
 autocmd BufRead,BufNewFile Appfile set filetype=ruby
+
+" Move blocks of code around with alt-j/k
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
+inoremap ∆ <Esc>:m .+1<CR>==gi
+inoremap ˚ <Esc>:m .-2<CR>==gi
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '<-2<CR>gv=gv

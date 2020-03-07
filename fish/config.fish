@@ -10,12 +10,15 @@ alias current_branch="git symbolic-ref -q HEAD | cut -c 12-"
 
 abbr -a gco "git checkout"
 
+alias delete_swap="find . -type f -name '*.sw[klmnop]' -delete"
+
 alias be="bundle exec"
 
 alias v="vim"
 alias vi="vim"
 alias z="zeus"
 alias zc="zeus c"
+alias zr="zeus rake"
 
 alias g="git"
 alias gs="git status"
@@ -96,9 +99,12 @@ set -g PATH "$ANDROID_HOME/tools" $PATH
 set -g PATH "$ANDROID_HOME/platform-tools" $PATH
 
 set -g fish_user_paths "/usr/local/opt/postgresql@9.6/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/node@8/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/node@12/bin" $fish_user_paths
 
 # rbenv
 status --is-interactive; and source (rbenv init -|psub)
 set -g fish_user_paths "/usr/local/opt/qt@5.5/bin" $fish_user_paths
 set -g fish_user_paths "/Users/dan/.config/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths

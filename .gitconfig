@@ -1,8 +1,8 @@
 [user]
-    name = Dan Hassin
-    email = danhassin@mac.com
+	name = Dan Hassin
+	email = dan@nowsta.com
 [core]
-    excludesfile = /Users/dan/.gitignore
+	excludesfile = /Users/dan/.gitignore
     ignorecase = false
     editor = vim
 [alias]
@@ -25,3 +25,11 @@
     helper = osxkeychain
 [push]
     default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/dan/.stCommitMsg
