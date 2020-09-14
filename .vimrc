@@ -9,10 +9,6 @@ Plug 'dingbat/vim-test'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rails'
 
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
 Plug 'dag/vim-fish'
 
 Plug 'scrooloose/nerdtree'
@@ -42,6 +38,8 @@ Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 " end vim-plug
+
+set backspace=indent,eol,start
 
 " multi cursor
 let g:multi_cursor_exit_from_insert_mode = 0
@@ -266,3 +264,6 @@ inoremap ∆ <Esc>:m .+1<CR>==gi
 inoremap ˚ <Esc>:m .-2<CR>==gi
 vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
+
+command! DW w | execute "!docker cp %:p wizardly_franklin:/home/circleci/project/%"
+command! DS execute "!docker exec -it -w /home/circleci/project wizardly_franklin bundle exec spinach %"

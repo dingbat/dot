@@ -91,14 +91,12 @@ set -g ANDROID_HOME "/Users/dan/Library/Android/sdk"
 
 set -g EDITOR "vim"
 
-set -g PATH "/usr/local/opt/gnupg/libexec/gpgbin" $PATH
 set -g GOPATH "/Users/dan/go"
-set -g PATH "/usr/local/opt/go/libexec/bin" $PATH
 
 set -g PATH "$ANDROID_HOME/tools" $PATH
 set -g PATH "$ANDROID_HOME/platform-tools" $PATH
 
-set -g fish_user_paths "/usr/local/opt/postgresql@9.6/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/postgresql/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/node@12/bin" $fish_user_paths
 
 # rbenv
@@ -108,3 +106,5 @@ set -g fish_user_paths "/Users/dan/.config/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+
+# set -g LIBRARY_PATH "/usr/local/opt/openssl/lib/" $LIBRARY_PATH
