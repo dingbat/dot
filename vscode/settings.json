@@ -1,0 +1,119 @@
+{
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["Y"],
+      "after": ["y", "$"]
+    },
+    {
+      "before": ["<tab>"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "="],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["<C-w>", "h"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<C-w>", "l"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<leader>", "<leader>", "<leader>", "j"]
+    }
+  ],
+  "vim.easymotion": true,
+  "vim.easymotionMarkerYOffset": 4,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [80],
+  "editor.wordWrap": "on",
+  "editor.parameterHints.enabled": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "ruby.format": "rufo",
+  "ruby.intellisense": "rubyLocate",
+  "solargraph.commandPath": "/Users/dan/.rbenv/versions/2.5.7/bin/solargraph",
+  "ruby.interpreter.commandPath": "/Users/dan/.rbenv/versions/2.5.7/bin/ruby",
+  "ruby.useLanguageServer": true,
+  "ruby.pathToBundler": "/usr/local/Cellar/rbenv/1.1.0/libexec/rbenv",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "vim.leader": ",",
+  "prettier.packageManager": "yarn",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.autoSurround": "never",
+  "javascript.autoClosingTags": false,
+  "typescript.autoClosingTags": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.startupEditor": "welcomePage",
+  "extensions.ignoreRecommendations": false,
+  "prettier.proseWrap": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.shell.osx": "bash",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "emmet.excludeLanguages": [
+    "javascriptreact",
+    "typescriptreact",
+    "markdown"
+  ],
+  "files.trimTrailingWhitespace": true,
+  "tabnine.experimentalAutoImports": true,
+  "wordcounter.side.left": [
+    "word",
+    "readingtime"
+  ],
+  "csv-edit.fontSizeInPx": 0,
+  "csv-edit.initialColumnWidth": 600,
+  "csv-edit.readOption_hasHeader": "true",
+  "csv-edit.writeOption_hasHeader": "true",
+  "files.associations": {
+    "*.leex": "HTML (Eex)"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "gitlens.hovers.enabled": false,
+  "eslint.packageManager": "yarn",
+  "cloudcode.enableConfigLessExperience": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[go]": {
+    "editor.formatOnSave": false
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "jest.autoRun": "off",
+}

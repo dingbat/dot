@@ -96,6 +96,10 @@ set -g GOPATH "/Users/dan/go"
 set -g PATH "$ANDROID_HOME/tools" $PATH
 set -g PATH "$ANDROID_HOME/platform-tools" $PATH
 
+set -g PATH "/Users/dan/.cabal/bin" $PATH
+set -g PATH "/Users/dan/.ghcup/bin" $PATH
+# source "/Users/dan/.ghcup/env"
+
 set -g fish_user_paths "/usr/local/opt/postgresql/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/node@12/bin" $fish_user_paths
 

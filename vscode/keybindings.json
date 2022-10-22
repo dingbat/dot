@@ -1,0 +1,79 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+f",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "alt+a",
+        "command": "alternate.alternateFile",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+a",
+        "command": "alternate.createAlternateFileInSplit",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "tab",
+        "command": "workbench.view.explorer",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.view.explorer",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "cmd+alt+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "last_test",
+    },
+    {
+        "key": "cmd+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "rspec",
+        "when": "resource =~ /_spec.rb$/"
+    },
+    {
+        "key": "cmd+shift+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "rspec_file",
+        "when": "resource =~ /_spec.rb$/"
+    },
+    {
+        "key": "cmd+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "spinach",
+        "when": "resource =~ /.feature$/"
+    },
+    {
+        "key": "cmd+shift+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "spinach_file",
+        "when": "resource =~ /.feature$/"
+    },
+    {
+        "key": "cmd+shift+m cmd+shift+d",
+        "command": "workbench.action.tasks.runTask",
+        "args": "migrate_down",
+    },
+    {
+        "key": "cmd+shift+m cmd+shift+u",
+        "command": "workbench.action.tasks.runTask",
+        "args": "migrate_up",
+    },
+    {
+        "key": "cmd+shift+m cmd+shift+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": "migrate_redo",
+    },
+]
