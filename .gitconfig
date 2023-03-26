@@ -1,35 +1,11 @@
-[user]
-	name = Dan Hassin
-	email = dan@nowsta.com
 [core]
 	excludesfile = /Users/dan/.gitignore
-    ignorecase = false
-    editor = vim
 [alias]
-    unstage = reset HEAD --
-    co = checkout
-    br = branch
-    rb = rebase
-    rbm = rebase master
-    rbc = rebase --continue
-    st = status
-    mg = merge
-    cp = cherry-pick
-    brc = checkout -b
-    cdiff = !sh -c 'git diff HEAD~"$0"...HEAD'
-    al = !sh -c 'git config --global alias."$0" "\"$1\""'
-    tagcommit = !sh -c 'git rev-list $0 | head -n 1'
-    undo = !sh -c 'echo \"\\033[31m[$(git rev-parse --short HEAD)] $(git log -1 --pretty=%B) \\033[0m\" && read -p \"Press enter to confirm undo of this commit\n\" && git reset HEAD~1 && git status'
-    fix = "!vim -p `git diff --name-only | uniq`"
-[credential]
-    helper = osxkeychain
-[push]
-    default = simple
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/dan/.stCommitMsg
+	unstage = reset HEAD --
+	br = branch
+	st = status
+	cob = checkout -b
+	co = checkout
+	cp = cherry-pick
+	undo = !sh -c 'echo \"\\033[31m[$(git rev-parse --short HEAD)] $(git log -1 --pretty=%B) \\033[0m\" && read -p \"Press enter to confirm undo of this commit\n\" && git reset HEAD~1 && git status'
+	
